@@ -21,8 +21,8 @@ plt.rcParams['axes.titleweight'] = 'bold'
 # =============================================================================
 # Absolute path allocations for raw transcriptomic differential expression data 
 # and structural glycogenomic annotations.
-path_de = r"C:\Users\lebeatty\Desktop\Desktop Dump\differential_expression_results.csv"
-path_glyco = r"C:\Users\lebeatty\Desktop\Desktop Dump\glycogenes.csv"
+path_de = r"pathto\differential_expression_results.csv" #file output from CellXgene differential expression
+path_glyco = r"pathto\glycogenes.csv" #list of glycogenes to narrow search to
 
 # =============================================================================
 # 2. DATA ACQUISITION, STRUCTURING, & CLEANING
