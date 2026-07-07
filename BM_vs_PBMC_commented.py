@@ -23,9 +23,9 @@ warnings.filterwarnings('ignore')
 # ==============================================================================
 
 # File system paths mapping to inputs (Parquet files) and desired output directory
-BM_PATH = r"C:\Users\lebeatty\Box\cbe-neel-shared\JointProjects\Lauren\SingleCellGlycomics\SpectralFlow\SpecLec_data_analysis\Parquet Files\Bone Marrow"
-PBMC_PATH = r"C:\Users\lebeatty\Box\cbe-neel-shared\JointProjects\Lauren\SingleCellGlycomics\SpectralFlow\SpecLec_data_analysis\Parquet Files\MM\Healthy"
-OUTPUT_DIR = r'C:\Users\lebeatty\Box\cbe-neel-shared\JointProjects\Lauren\SingleCellGlycomics\SpectralFlow\SpecLec_data_analysis\Unified_Analysis_v1\Violin_Plots'
+BM_PATH = #path to folder containing BM files
+PBMC_PATH = #path to folder containing PBMC files 
+OUTPUT_DIR = #output path
 
 # Color palettes for tissue source segregation (BMCs vs PBMCs)
 PALETTE = {'BMCs': '#3498db', 'PBMCs': '#e74c3c'}         # Main high-contrast colors
