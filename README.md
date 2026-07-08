@@ -1,5 +1,41 @@
-# spectral
-Code for downstream processing of spectral flow cytometry data
-KNN_commented.py contains code for interpolating missing missing lectin panel values using a conserved antibody backbone. This code intakes csv files from spectral flow cytometry data. The files must be formatted such that each row represents a cell, and each column represents a fluorophore- either a lectin or an antibody. The program may be set to either 3 panel or 5 panel mode, depending on the structure of the experiment being analyzed. A KNN model is trained using antibody binding data which is common between all samples and uses this to interpolate missing values from the remaining lectin columns. The output of this code is a single, consolodated csv file with all missing lectin values filled in 
-Differential_glycogenes.py uses differential glycogene expression data between 2 different cell types, generated using CellxGene differential expression tool and generates barplots based on the input data.
-BM_vs_PBMC_commented.py gives a pipeline for analyzing the differences in spectral flow data between 2 cell types, bone marrow and peripheral blood mononuclear cells. The code maps to 2 files, each containing parquet files containing spectral flow cytometry data for a given cell type. The folder may have multiple files for each cell type, which will be recognized as replicates. The input files must be formatted such that each row represents a cell and columns contain antibody binding data, lectin binding data, and cell type. Fluorescent data is normalized using the Arcsinh function. The outputs of the code are PCA plots showing the distribution of samples for each cell type using lectin binding data for each tissue type, a bubble plot showing differential lectin expression between tissue types, including statistic significance, and boxplots showing lectin binding distribution for each cell type.  
+# Spectral Flow Cytometry Data Analysis
+
+This repository contains code for downstream processing and analysis of spectral flow cytometry data, with a focus on lectin-binding and glycogene-expression datasets.
+
+## Scripts
+
+### `KNN_commented.py`
+
+`KNN_commented.py` interpolates missing lectin-panel values using a conserved antibody backbone.
+
+The script takes CSV files generated from spectral flow cytometry experiments as input. Input files must be formatted such that each row represents a single cell, and each column represents a measured fluorophore corresponding to either a lectin or an antibody.
+
+The program can be run in either **3-panel** or **5-panel** mode, depending on the experimental design. A K-nearest neighbors model is trained using antibody-binding features that are common across all samples. This model is then used to interpolate missing values in the remaining lectin columns.
+
+The output is a single consolidated CSV file in which missing lectin values have been filled in.
+
+---
+
+### `Differential_glycogenes.py`
+
+`Differential_glycogenes.py` processes differential glycogene-expression data between two cell types.
+
+The input data are expected to be generated using the CellxGene differential-expression tool. The script generates bar plots summarizing differential glycogene expression based on the input dataset.
+
+---
+
+### `BM_vs_PBMC_commented.py`
+
+`BM_vs_PBMC_commented.py` provides a pipeline for comparing spectral flow cytometry data between two cell populations: **bone marrow** and **peripheral blood mononuclear cells (PBMCs)**.
+
+The script maps to two input folders, each containing Parquet files for one cell type. Each folder may contain multiple files, which are treated as biological or technical replicates.
+
+Input files must be formatted such that each row represents a single cell, and columns include antibody-binding data, lectin-binding data, and cell-type annotations.
+
+Fluorescence-intensity data are normalized using an arcsinh transformation.
+
+The script generates the following outputs:
+
+- PCA plots showing the distribution of samples from each tissue type based on lectin-binding data
+- Bubble plots showing differential lectin binding between tissue types, including statistical significance
+- Box plots showing lectin-binding distributions for each cell type  
